@@ -12,9 +12,10 @@ namespace Indecsators
     {
         int[] a;  //ссылка на базовый массив
         int len; // длина массива
+        bool ErrFlag;
 
        // public int length;
-        public bool ErrFlag; //обозначает результат последней операции
+       // public bool ErrFlag; //обозначает результат последней операции
 
         public FailSoftArray(int size)
         {
@@ -27,6 +28,14 @@ namespace Indecsators
             get
             {
                 return len;
+            }
+        }
+
+        public bool Error
+        {
+            get
+            {
+                return ErrFlag;
             }
         }
 
@@ -157,7 +166,7 @@ namespace Indecsators
             for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 fs[i] = i * 10;
-                if (fs.ErrFlag)
+                if (fs.Error)
                 {
                     Console.WriteLine("fs[" + i + "] вне границ");
                 }
@@ -166,7 +175,7 @@ namespace Indecsators
             for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 x = fs[i];
-                if (!fs.ErrFlag)
+                if (!fs.Error)
                 {
                     Console.Write(x + " "); 
                 }
