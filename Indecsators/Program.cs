@@ -103,7 +103,7 @@ namespace Indecsators
                 }
             }
         }
-    
+
 
         private bool ok(int index)
         {
@@ -132,12 +132,12 @@ namespace Indecsators
                 fs[i] = i * 10;
             }
 
-            
+
 
             for (int i = 0; i < (fs.length * 2); i++)
             {
                 x = fs[i];
-                if(x != -1)
+                if (x != -1)
                 {
                     Console.Write(x + " ");
                 }
@@ -158,7 +158,7 @@ namespace Indecsators
                 x = fs[i];
                 if (!fs.ErrFlag)
                 {
-                    Console.Write(x + " "); 
+                    Console.Write(x + " ");
                 }
                 else
                 {
@@ -166,8 +166,17 @@ namespace Indecsators
                 }
             }
             Console.WriteLine();
+
+            for (int i = 0; i < fs.length; i++)
+            {
+                fs[i] = i;
+            }
+
+            Console.WriteLine("fs[1]: " + fs[1]);
+            Console.WriteLine("fs[2]: " + fs[2]);
+            Console.WriteLine("fs[1.1]: " + fs[1.1]);
+            Console.WriteLine("fs[1.6]: " + fs[1.6]);
+
         }
-
-
     }
 }
