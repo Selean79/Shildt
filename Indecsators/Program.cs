@@ -184,7 +184,7 @@ namespace Indecsators
                     Console.Write("\nfs[" + i + "] вне границ");
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine(); tests
         }
 
 
