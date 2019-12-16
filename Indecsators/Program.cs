@@ -15,7 +15,7 @@ namespace Indecsators
         public int length;
         public bool ErrFlag; //обозначает результат последней операции
 
-        public  FailSoftArray(int size)
+        public  FailSoftArray(int size)e
         {
             a = new int[size];
             length = size;
@@ -111,7 +111,7 @@ namespace Indecsators
                     Console.Write("\nfs[" + i + "] вне границ");
                 }
             }
-            Console.WriteLine();sfgdfgfd
+            Console.WriteLine();
         }
 
 
