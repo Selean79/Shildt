@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3002AEC3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part_10", "Part_10", "{093867C2-F1BE-4136-8E5A-D7773B4DAE86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indecsators", "..\IndecsatorsAndproperies\Indecsators\Indecsators.csproj", "{63B5B8BD-1EC0-4DDD-9209-9E79E3300F6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indecsators", "Indecsators\Indecsators.csproj", "{63B5B8BD-1EC0-4DDD-9209-9E79E3300F6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
