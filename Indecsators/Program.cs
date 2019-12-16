@@ -15,7 +15,7 @@ namespace Indecsators
         public int length;
         public bool ErrFlag; //обозначает результат последней операции
 
-        public  FailSoftArray(int size)e
+        public FailSoftArray(int size)
         {
             a = new int[size];
             length = size;
@@ -25,10 +25,10 @@ namespace Indecsators
         {
             get
             {
-                if(ok(index))
+                if (ok(index))
                 {
                     ErrFlag = false;
-                    return  a[index];
+                    return a[index];
                 }
                 else
                 {
@@ -37,7 +37,7 @@ namespace Indecsators
                 }
             }
 
-            set 
+            set
             {
                 if (ok(index))
                 {
@@ -50,6 +50,60 @@ namespace Indecsators
                 }
             }
         }
+
+        public int this[double idx]
+        {
+            get
+            {
+                int index;
+
+                if ((idx - (int)idx) < 0.5)
+                {
+                    index = (int)idx;
+                }
+                else
+                {
+                    index = (int)idx + 1;
+                }
+
+                if (ok(index))
+                {
+                    ErrFlag = false;
+                    return a[index];
+                }
+                else
+                {
+                    ErrFlag = true;
+                    return 0;
+                }
+            }
+
+            set
+            {
+                int index;
+
+                if ((idx - (int)idx) < 0.5)
+                {
+                    index = (int)idx;
+                }
+                else
+                {
+                    index = (int)idx + 1;
+                }
+
+
+                if (ok(index))
+                {
+                    a[index] = value;
+                    ErrFlag = false;
+                }
+                else
+                {
+                    ErrFlag = true;
+                }
+            }
+        }
+    
 
         private bool ok(int index)
         {
