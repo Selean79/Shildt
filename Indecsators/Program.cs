@@ -11,15 +11,25 @@ namespace Indecsators
     class FailSoftArray
     {
         int[] a;  //ссылка на базовый массив
+        int len; // длина массива
 
-        public int length;
+       // public int length;
         public bool ErrFlag; //обозначает результат последней операции
 
         public FailSoftArray(int size)
         {
             a = new int[size];
-            length = size;
+            len = size;
         }
+
+        public int Lebght
+        {
+            get
+            {
+                return len;
+            }
+        }
+
 
         public int this[int index]
         {
@@ -107,7 +117,7 @@ namespace Indecsators
 
         private bool ok(int index)
         {
-            if (index >= 0 & index < length)
+            if (index >= 0 & index < Lebght)
             {
                 return true;
             }
@@ -127,14 +137,14 @@ namespace Indecsators
 
 
             Console.WriteLine("Скрытый сбой\n");
-            for (int i = 0; i < (fs.length * 2); i++)
+            for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 fs[i] = i * 10;
             }
 
             
 
-            for (int i = 0; i < (fs.length * 2); i++)
+            for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 x = fs[i];
                 if(x != -1)
@@ -144,7 +154,7 @@ namespace Indecsators
             }
             Console.WriteLine();
 
-            for (int i = 0; i < (fs.length * 2); i++)
+            for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 fs[i] = i * 10;
                 if (fs.ErrFlag)
@@ -153,7 +163,7 @@ namespace Indecsators
                 }
             }
 
-            for (int i = 0; i < (fs.length * 2); i++)
+            for (int i = 0; i < (fs.Lebght * 2); i++)
             {
                 x = fs[i];
                 if (!fs.ErrFlag)
