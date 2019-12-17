@@ -11,34 +11,15 @@ namespace Indecsators
     class FailSoftArray
     {
         int[] a;  //ссылка на базовый массив
-        int len; // длина массива
-        bool ErrFlag;
 
-       // public int length;
-       // public bool ErrFlag; //обозначает результат последней операции
+        public int length;
+        public bool ErrFlag; //обозначает результат последней операции
 
         public FailSoftArray(int size)
         {
             a = new int[size];
-            len = size;
+            length = size;
         }
-
-        public int Lebght
-        {
-            get
-            {
-                return len;
-            }
-        }
-
-        public bool Error
-        {
-            get
-            {
-                return ErrFlag;
-            }
-        }
-
 
         public int this[int index]
         {
@@ -122,11 +103,11 @@ namespace Indecsators
                 }
             }
         }
-    
+
 
         private bool ok(int index)
         {
-            if (index >= 0 & index < Lebght)
+            if (index >= 0 & index < length)
             {
                 return true;
             }
@@ -146,38 +127,38 @@ namespace Indecsators
 
 
             Console.WriteLine("Скрытый сбой\n");
-            for (int i = 0; i < (fs.Lebght * 2); i++)
+            for (int i = 0; i < (fs.length * 2); i++)
             {
                 fs[i] = i * 10;
             }
 
-            
 
-            for (int i = 0; i < (fs.Lebght * 2); i++)
+
+            for (int i = 0; i < (fs.length * 2); i++)
             {
                 x = fs[i];
-                if(x != -1)
+                if (x != -1)
                 {
                     Console.Write(x + " ");
                 }
             }
             Console.WriteLine();
 
-            for (int i = 0; i < (fs.Lebght * 2); i++)
+            for (int i = 0; i < (fs.length * 2); i++)
             {
                 fs[i] = i * 10;
-                if (fs.Error)
+                if (fs.ErrFlag)
                 {
                     Console.WriteLine("fs[" + i + "] вне границ");
                 }
             }
 
-            for (int i = 0; i < (fs.Lebght * 2); i++)
+            for (int i = 0; i < (fs.length * 2); i++)
             {
                 x = fs[i];
-                if (!fs.Error)
+                if (!fs.ErrFlag)
                 {
-                    Console.Write(x + " "); 
+                    Console.Write(x + " ");
                 }
                 else
                 {
@@ -185,8 +166,17 @@ namespace Indecsators
                 }
             }
             Console.WriteLine();
+
+            for (int i = 0; i < fs.length; i++)
+            {
+                fs[i] = i;
+            }
+
+            Console.WriteLine("fs[1]: " + fs[1]);
+            Console.WriteLine("fs[2]: " + fs[2]);
+            Console.WriteLine("fs[1.1]: " + fs[1.1]);
+            Console.WriteLine("fs[1.6]: " + fs[1.6]);
+
         }
-
-
     }
 }
